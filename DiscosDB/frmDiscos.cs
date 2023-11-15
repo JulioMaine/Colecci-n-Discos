@@ -23,12 +23,20 @@ namespace DiscosDB
         private List<Disco> listaDiscos;
         private void Form1_Load(object sender, EventArgs e)
         {
-            Actualizar();
-            cbCampo.Items.Add("Nombre del disco");
-            cbCampo.Items.Add("Año de lanzamiento");
-            cbCampo.Items.Add("Genero");
+            try
+            {
+                Actualizar();
+                cbCampo.Items.Add("Nombre del disco");
+                cbCampo.Items.Add("Año de lanzamiento");
+                cbCampo.Items.Add("Genero");
+                dtpFiltro.Visible = false;
+            }
+            catch (Exception ex)
+            {
 
-            dtpFiltro.Visible = false;
+                MessageBox.Show(ex.ToString());
+            }
+
         }
         private void Actualizar()
         {
@@ -43,7 +51,7 @@ namespace DiscosDB
                 dgvEstilos.Visible = false;
                 listaEstilos = estilo.listar();
                 dgvEstilos.DataSource = listaEstilos;
-               
+
 
             }
             catch (Exception ex)
@@ -66,14 +74,14 @@ namespace DiscosDB
                 {
                     Disco seleccionado = (Disco)dgvDiscos.CurrentRow.DataBoundItem;
                     cargarImagen(seleccionado.UrlImagenTapa);
-                }            
+                }
             }
             catch (Exception ex)
             {
 
-               MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.ToString());
             }
-     
+
         }
 
         private void cargarImagen(string imagen)
@@ -99,7 +107,7 @@ namespace DiscosDB
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            
+
             Disco modificarDisco = (Disco)dgvDiscos.CurrentRow.DataBoundItem;
             frmAgregarDisco agregar = new frmAgregarDisco(modificarDisco);
             agregar.ShowDialog();
@@ -131,62 +139,75 @@ namespace DiscosDB
         private void txtbFiltrar_TextChanged(object sender, EventArgs e)
         {
             List<Disco> listaFiltrada;
-            string filtro = txtbFiltrar.Text;
-           
-            if (filtro.Length >= 3)
-            {
-                // BUENAS PRACTICAS SERIA TENER 2 LISTAS DIFERENTES, UNA LISTA DE DISCOS Y LA OTRA CON LOS DISCOS FILTRADOS.
-                // REEVER
-                listaFiltrada = listaDiscos.FindAll(x => x.Titulo.ToUpper().Contains(txtbFiltrar.Text.ToUpper()) || x.FechaLanzamiento.Year.ToString() == (txtbFiltrar.Text));            
-            }
-            else
-            {
-                listaFiltrada = listaDiscos;
-            }
 
-            dgvDiscos.DataSource = null;
-            dgvDiscos.DataSource = listaFiltrada;
-            ocultarColumnas();
+            try
+            {
+                string filtro = txtbFiltrar.Text;
+                if (filtro.Length >= 3)
+                {
+                    // BUENAS PRACTICAS SERIA TENER 2 LISTAS DIFERENTES, UNA LISTA DE DISCOS Y LA OTRA CON LOS DISCOS FILTRADOS.
+                    // REEVER
+                    listaFiltrada = listaDiscos.FindAll(x => x.Titulo.ToUpper().Contains(txtbFiltrar.Text.ToUpper()) || x.FechaLanzamiento.Year.ToString() == (txtbFiltrar.Text));
+                }
+                else
+                {
+                    listaFiltrada = listaDiscos;
+                }
+
+                dgvDiscos.DataSource = null;
+                dgvDiscos.DataSource = listaFiltrada;
+                ocultarColumnas();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void cbCampo_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            dtpFiltro.Visible = false;
-            if (cbCampo.SelectedItem.ToString() == "Nombre del disco")                
+            try
             {
-                cbCriterio.Items.Clear();
-                cbCriterio.Items.Add("Empieza con");
-                cbCriterio.Items.Add("Termina con");
-                cbCriterio.Items.Add("Contiene");
-                txtbFiltroAvanzado.Enabled = true;
+                dtpFiltro.Visible = false;
+                if (cbCampo.SelectedItem.ToString() == "Nombre del disco")
+                {
+                    cbCriterio.Items.Clear();
+                    cbCriterio.Items.Add("Empieza con");
+                    cbCriterio.Items.Add("Termina con");
+                    cbCriterio.Items.Add("Contiene");
+                    txtbFiltroAvanzado.Enabled = true;
+                }
+                else if (cbCampo.SelectedItem.ToString() == "Año de lanzamiento")
+                {
+                    dtpFiltro.Visible = true;
+                    cbCriterio.Items.Clear();
+                    cbCriterio.Items.Add("Despues del");
+                    cbCriterio.Items.Add("Antes del");
+                    cbCriterio.Items.Add("Año exacto");
+                    txtbFiltroAvanzado.Enabled = false;
+                    txtbFiltroAvanzado.Clear();
+
+                    // ANTES DE SEGUIR, FIJATE EL VIDEO DE LAS VALIDACIONES Y QUE ESTA PARTE SEA UN DATE TIME PICKER DONDE ELIJA LA FECHA,
+                    // O INDICARLE COMO DEBE PONER EL AÑO, MES Y EL DIA EN EL TEXT BOX....
+                }
+                else
+                {
+                    cbCriterio.Items.Clear();
+                    cbCriterio.Items.Add("Pop Punk");
+                    cbCriterio.Items.Add("Pop");
+                    cbCriterio.Items.Add("Rock");
+                    cbCriterio.Items.Add("Grunge");
+                    cbCriterio.Items.Add("Phonk");
+                    cbCriterio.Items.Add("Clasica");
+                    cbCriterio.Items.Add("Todos");
+                    txtbFiltroAvanzado.Enabled = false;
+                    txtbFiltroAvanzado.Clear();
+                }
             }
-            else if (cbCampo.SelectedItem.ToString() == "Año de lanzamiento")
+            catch (Exception ex)
             {
-                dtpFiltro.Visible = true;
-                cbCriterio.Items.Clear();
-                cbCriterio.Items.Add("Despues del");
-                cbCriterio.Items.Add("Antes del");
-                cbCriterio.Items.Add("Año exacto");
-                txtbFiltroAvanzado.Enabled = false;
-                txtbFiltroAvanzado.Clear();
 
-                // ANTES DE SEGUIR, FIJATE EL VIDEO DE LAS VALIDACIONES Y QUE ESTA PARTE SEA UN DATE TIME PICKER DONDE ELIJA LA FECHA.
-                // O INDICARLE COMO DEBE PONER EL AÑO, MES Y EL DIA EN EL TEXT BOX....
-            }
-            else
-            {
-                cbCriterio.Items.Clear();
-                cbCriterio.Items.Add("Pop Punk");
-                cbCriterio.Items.Add("Pop");
-                cbCriterio.Items.Add("Rock");
-                cbCriterio.Items.Add("Grunge");
-                cbCriterio.Items.Add("Phonk");
-                cbCriterio.Items.Add("Clasica");
-                cbCriterio.Items.Add("Todos");
-                txtbFiltroAvanzado.Enabled = false;
-                txtbFiltroAvanzado.Clear();
-
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -207,8 +228,8 @@ namespace DiscosDB
                 if (campo == "Genero")
                 {
                     filtro = criterio;
-                }  
-                
+                }
+
                 dgvDiscos.DataSource = discoNegocio.filtroAvanzado(campo, criterio, filtro);
             }
             catch (Exception ex)
