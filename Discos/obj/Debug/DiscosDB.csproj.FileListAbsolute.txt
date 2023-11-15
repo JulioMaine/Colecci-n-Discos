@@ -1,0 +1,16 @@
+C:\Users\Usuario\source\repos\PracticaDiscos\DiscosDB\bin\Debug\DiscosDB.exe.config
+C:\Users\Usuario\source\repos\PracticaDiscos\DiscosDB\bin\Debug\DiscosDB.exe
+C:\Users\Usuario\source\repos\PracticaDiscos\DiscosDB\bin\Debug\DiscosDB.pdb
+C:\Users\Usuario\source\repos\PracticaDiscos\DiscosDB\obj\Debug\DiscosDB.csproj.AssemblyReference.cache
+C:\Users\Usuario\source\repos\PracticaDiscos\DiscosDB\obj\Debug\DiscosDB.Properties.Resources.resources
+C:\Users\Usuario\source\repos\PracticaDiscos\DiscosDB\obj\Debug\DiscosDB.csproj.GenerateResource.cache
+C:\Users\Usuario\source\repos\PracticaDiscos\DiscosDB\obj\Debug\DiscosDB.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\PracticaDiscos\DiscosDB\obj\Debug\DiscosDB.exe
+C:\Users\Usuario\source\repos\PracticaDiscos\DiscosDB\obj\Debug\DiscosDB.pdb
+C:\Users\Usuario\source\repos\PracticaDiscos\DiscosDB\bin\Debug\dominio.dll
+C:\Users\Usuario\source\repos\PracticaDiscos\DiscosDB\bin\Debug\negocio.dll
+C:\Users\Usuario\source\repos\PracticaDiscos\DiscosDB\bin\Debug\dominio.pdb
+C:\Users\Usuario\source\repos\PracticaDiscos\DiscosDB\bin\Debug\negocio.pdb
+C:\Users\Usuario\source\repos\PracticaDiscos\DiscosDB\obj\Debug\DiscosDB.csproj.CopyComplete
+C:\Users\Usuario\source\repos\PracticaDiscos\DiscosDB\obj\Debug\DiscosDB.frmDiscos.resources
+C:\Users\Usuario\source\repos\PracticaDiscos\DiscosDB\obj\Debug\DiscosDB.frmAgregarDisco.resources

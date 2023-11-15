@@ -1,0 +1,13 @@
+C:\Users\Usuario\source\repos\PracticaDiscos\OtraApp\bin\Debug\OtraApp.exe.config
+C:\Users\Usuario\source\repos\PracticaDiscos\OtraApp\bin\Debug\OtraApp.exe
+C:\Users\Usuario\source\repos\PracticaDiscos\OtraApp\bin\Debug\OtraApp.pdb
+C:\Users\Usuario\source\repos\PracticaDiscos\OtraApp\obj\Debug\OtraApp.Form1.resources
+C:\Users\Usuario\source\repos\PracticaDiscos\OtraApp\obj\Debug\OtraApp.Properties.Resources.resources
+C:\Users\Usuario\source\repos\PracticaDiscos\OtraApp\obj\Debug\OtraApp.csproj.GenerateResource.cache
+C:\Users\Usuario\source\repos\PracticaDiscos\OtraApp\obj\Debug\OtraApp.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\PracticaDiscos\OtraApp\obj\Debug\OtraApp.exe
+C:\Users\Usuario\source\repos\PracticaDiscos\OtraApp\obj\Debug\OtraApp.pdb
+C:\Users\Usuario\source\repos\PracticaDiscos\OtraApp\bin\Debug\dominio.dll
+C:\Users\Usuario\source\repos\PracticaDiscos\OtraApp\bin\Debug\dominio.pdb
+C:\Users\Usuario\source\repos\PracticaDiscos\OtraApp\obj\Debug\OtraApp.csproj.AssemblyReference.cache
+C:\Users\Usuario\source\repos\PracticaDiscos\OtraApp\obj\Debug\OtraApp.csproj.CopyComplete
