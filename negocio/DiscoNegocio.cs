@@ -158,13 +158,13 @@ namespace negocio
                     switch (criterio)
                     {
                         case ("Despues del"):
-                            consulta += "FechaLanzamiento >= '01/01/" + filtro + "'";
+                            consulta += "FechaLanzamiento > " + "'" + filtro + "'";
                         break;
                         case ("Antes del"):
-                            consulta += "FechaLanzamiento <= '12/31/" + filtro + "'";
+                            consulta += "FechaLanzamiento < " + "'" + filtro + "'";
                         break;
                         case ("Año exacto"):
-                            consulta += "FechaLanzamiento >= '01/01/" + filtro + "'" + " and FechaLanzamiento <= '12/31/" + (filtro) + "'";
+                            consulta += "FechaLanzamiento = " + "'" + filtro + "'";
                         break;
                     }
                 }

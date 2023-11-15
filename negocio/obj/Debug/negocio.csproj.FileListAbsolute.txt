@@ -7,3 +7,12 @@ C:\Users\Usuario\source\repos\PracticaDiscos\negocio\obj\Debug\negocio.csproj.Co
 C:\Users\Usuario\source\repos\PracticaDiscos\negocio\obj\Debug\negocio.csproj.CopyComplete
 C:\Users\Usuario\source\repos\PracticaDiscos\negocio\obj\Debug\negocio.dll
 C:\Users\Usuario\source\repos\PracticaDiscos\negocio\obj\Debug\negocio.pdb
+D:\MIS COSAS\Escritorio\Coleccion-Discos\negocio\bin\Debug\negocio.dll
+D:\MIS COSAS\Escritorio\Coleccion-Discos\negocio\bin\Debug\negocio.pdb
+D:\MIS COSAS\Escritorio\Coleccion-Discos\negocio\bin\Debug\dominio.dll
+D:\MIS COSAS\Escritorio\Coleccion-Discos\negocio\bin\Debug\dominio.pdb
+D:\MIS COSAS\Escritorio\Coleccion-Discos\negocio\obj\Debug\negocio.csproj.AssemblyReference.cache
+D:\MIS COSAS\Escritorio\Coleccion-Discos\negocio\obj\Debug\negocio.csproj.CoreCompileInputs.cache
+D:\MIS COSAS\Escritorio\Coleccion-Discos\negocio\obj\Debug\negocio.csproj.CopyComplete
+D:\MIS COSAS\Escritorio\Coleccion-Discos\negocio\obj\Debug\negocio.dll
+D:\MIS COSAS\Escritorio\Coleccion-Discos\negocio\obj\Debug\negocio.pdb

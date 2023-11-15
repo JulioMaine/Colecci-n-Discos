@@ -27,8 +27,8 @@ namespace DiscosDB
             cbCampo.Items.Add("Nombre del disco");
             cbCampo.Items.Add("Año de lanzamiento");
             cbCampo.Items.Add("Genero");
-            
 
+            dtpFiltro.Visible = false;
         }
         private void Actualizar()
         {
@@ -152,7 +152,7 @@ namespace DiscosDB
         private void cbCampo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            
+            dtpFiltro.Visible = false;
             if (cbCampo.SelectedItem.ToString() == "Nombre del disco")                
             {
                 cbCriterio.Items.Clear();
@@ -163,11 +163,13 @@ namespace DiscosDB
             }
             else if (cbCampo.SelectedItem.ToString() == "Año de lanzamiento")
             {
+                dtpFiltro.Visible = true;
                 cbCriterio.Items.Clear();
                 cbCriterio.Items.Add("Despues del");
                 cbCriterio.Items.Add("Antes del");
                 cbCriterio.Items.Add("Año exacto");
-                txtbFiltroAvanzado.Enabled = true;
+                txtbFiltroAvanzado.Enabled = false;
+                txtbFiltroAvanzado.Clear();
 
                 // ANTES DE SEGUIR, FIJATE EL VIDEO DE LAS VALIDACIONES Y QUE ESTA PARTE SEA UN DATE TIME PICKER DONDE ELIJA LA FECHA.
                 // O INDICARLE COMO DEBE PONER EL AÑO, MES Y EL DIA EN EL TEXT BOX....
@@ -193,19 +195,19 @@ namespace DiscosDB
             DiscoNegocio discoNegocio = new DiscoNegocio();
             try
             {
+                if (cbCampo.SelectedItem == null || cbCriterio.SelectedItem == null)
+                    return;
                 string campo = cbCampo.SelectedItem.ToString();
                 string criterio = cbCriterio.SelectedItem.ToString();
-                if (cbCampo.SelectedItem.ToString() == "Año de lanzamiento")                 
-                    string filtro = dtpFiltro.Value.ToString();
+                string filtro = txtbFiltroAvanzado.Text;
 
-                if (txtbFiltroAvanzado.Enabled == false)
+                if (campo == "Año de lanzamiento")
+                    filtro = dtpFiltro.Value.ToString("yyyy-MM-dd");
+
+                if (campo == "Genero")
                 {
                     filtro = criterio;
-                }
-                else
-                {
-                    filtro = txtbFiltroAvanzado.Text;
-                }   
+                }  
                 
                 dgvDiscos.DataSource = discoNegocio.filtroAvanzado(campo, criterio, filtro);
             }
